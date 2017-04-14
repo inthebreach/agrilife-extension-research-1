@@ -1,0 +1,21 @@
+{
+    "name": "agrilife/extension",
+    "description": "Functionality for AgriLife Extension Research sites",
+    "license": "GPL2+",
+    "authors": [
+        {
+            "name": "Travis Ward",
+            "email": "travis@travisward.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+    },
+	"require-dev": {
+	},
+    "autoload": {
+        "psr-4": {
+            "AgriLife\\Extension\\": "src"
+        }
+    }
+}
