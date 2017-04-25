@@ -2,9 +2,9 @@
 
 if( function_exists('acf_add_local_field_group') ):
 
-  register_field_group(array (
-		'key' => 'group_58efd153ef75f',
-		'title' => 'Top Image',
+	acf_add_local_field_group(array (
+		'key' => 'group_58f7ba1d9ef3c',
+		'title' => 'Wide Image',
 		'fields' => array (
 			array (
 				'return_format' => 'array',
@@ -17,9 +17,9 @@ if( function_exists('acf_add_local_field_group') ):
 				'max_height' => '',
 				'max_size' => '',
 				'mime_types' => '',
-				'key' => 'field_58efd16c10119',
+				'key' => 'field_58f7ba36e089a',
 				'label' => 'Image',
-				'name' => 'topimage',
+				'name' => 'wideimage',
 				'type' => 'image',
 				'instructions' => '',
 				'required' => 0,
@@ -36,14 +36,12 @@ if( function_exists('acf_add_local_field_group') ):
 				array (
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => 'post',
-				),
-			),
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
 					'value' => 'page',
+				),
+				array (
+					'param' => 'page_template',
+					'operator' => '!=',
+					'value' => AG_EXTRES_TEMPLATE_PATH . '/home.php',
 				),
 			),
 		),

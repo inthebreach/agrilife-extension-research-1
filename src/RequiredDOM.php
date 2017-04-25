@@ -20,6 +20,9 @@ class RequiredDOM {
         // Modify Header Text
         add_filter( 'genesis_seo_description', array( $this, 'filter_tagline' ) );
 
+        // Modify Primary Navigation
+        add_filter( 'genesis_do_nav', array( $this, 'custom_nav_class' ), 12, 5 );
+
         // Render the Top Image
         add_action( 'genesis_after_header', array( $this, 'top_image' ), 11 );
 
@@ -119,15 +122,42 @@ class RequiredDOM {
     }
 
     /**
+     * Ensure primary navigation menu is right-aligned
+     *
+     * @param $nav_output The raw menu HTML
+     *
+     * @return string
+     */
+    public function custom_nav_class( $nav_output, $nav, $args ) {
+
+        preg_match_all('/<ul[^>]+>/', $nav_output, $uls);
+
+        foreach ($uls[0] as $value) {
+
+            if( preg_match( '/\bmenu-primary\b/', $value ) === 1 ){
+
+                $newvalue = preg_replace('/\bleft\b/', 'right', $value);
+                $nav_output = str_replace( $value, $newvalue, $nav_output );
+                break;
+
+            }
+
+        }
+
+        return $nav_output;
+
+    }
+
+    /**
      * Add top image custom field to page
      * @since 1.0
      * @return void
      */
     public function top_image(){
 
-        if( get_field('topimage') ){
+        if( get_field('wideimage') ){
 
-            $image = get_field( 'topimage' );
+            $image = get_field( 'wideimage' );
 
             $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 

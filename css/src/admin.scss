@@ -1,0 +1,45 @@
+$home-top: "58f7b7bd60267";
+  $carousel-slider: "58f7b7c668725";
+  $full-width: "58fe4ebe69315";
+  $select-carousel-slider: "58f7b7f268726";
+$home-programs: "58f76fa15da9e";
+  $heading: "58f78e65018df";
+  $image: "58f78f81018e0";
+  $link: "58f792e226510";
+  $description: "58f792fb26511";
+
+#acf-group_#{$home-top}{
+
+  .acf-fields > .acf-field-#{$full-width},
+  .acf-fields > .acf-field-#{$select-carousel-slider} {
+    border-top-width: 0;
+
+    > .acf-label,
+    > .acf-input {
+      padding: 0 12px 15px;
+    }
+
+    > .acf-label label:before {
+      content: "- ";
+    }
+  }
+}
+
+.acf-field-58f78e54018de {
+
+  .acf-fields > .acf-field {
+    border-top-width: 0;
+
+    > .acf-label,
+    > .acf-input {
+      padding: 0 12px 10px;
+    }
+
+    &:first-child {
+      .acf-label,
+      .acf-input {
+        padding-top: 10px;
+      }
+    }
+  }
+}

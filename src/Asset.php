@@ -17,6 +17,12 @@ class Asset {
         // Dequeue global styles
         add_action( 'wp_print_styles', array( $this, 'dequeue_global_styles'), 5 );
 
+        // Register admin scripts used in the theme
+        add_action( 'admin_enqueue_scripts', array( $this, 'register_admin_styles' ) );
+
+        // Enqueue admin scripts
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
+
 	}
 
     /**
@@ -69,6 +75,34 @@ class Asset {
 
         wp_enqueue_style( 'extension-research-styles' );
         wp_enqueue_style( 'extension-research-font' );
+
+    }
+
+    /**
+    * Registers globally used scripts
+    * @since 1.0
+    * @return void
+    */
+    public function register_admin_styles() {
+
+    wp_register_style(
+        'extension-research-admin',
+        AG_EXTRES_DIR_URL . 'css/admin.css',
+        array(),
+        '',
+        'screen'
+    );
+
+    }
+
+    /**
+    * Enqueues globally used scripts
+    * @since 1.0
+    * @return void
+    */
+    public function enqueue_admin_styles() {
+
+        wp_enqueue_style( 'extension-research-admin' );
 
     }
 

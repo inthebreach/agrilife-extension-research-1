@@ -1,6 +1,18 @@
 module.exports = (grunt) ->
   @initConfig
     pkg: @file.readJSON('package.json')
+    compass:
+      pkg:
+        options:
+          config: 'config.rb'
+          force: true
+      dev:
+        options:
+          config: 'config.rb'
+          force: true
+          outputStyle: 'expanded'
+          sourcemap: true
+          noLineComments: true
     compress:
       main:
         options:
@@ -31,10 +43,14 @@ module.exports = (grunt) ->
           file: '<%= pkg.name %>.zip'
           'Content-Type': 'application/zip'
 
+  @loadNpmTasks 'grunt-contrib-compass'
   @loadNpmTasks 'grunt-contrib-compress'
   @loadNpmTasks 'grunt-gh-release'
   @loadNpmTasks 'grunt-gitinfo'
 
+  @registerTask 'default', ['compass:dev']
+  @registerTask 'develop', ['compass:dev']
+  @registerTask 'package', ['compass:pkg']
   @registerTask 'release', ['compress', 'setreleasemsg', 'gh_release']
   @registerTask 'setreleasemsg', 'Set release message as range of commits', ->
     done = @async()

@@ -27,12 +27,13 @@ $extension_templates = new \AgriLife\Extension\Templates();
 $extension_widget_areas = new \AgriLife\Extension\WidgetAreas();
 
 add_action( 'agrilife_core_init', function() {
-    $extres_home_template = new \AgriLife\Core\PageTemplate();
-    $extres_home_template->with_path( AG_EXTRES_TEMPLATE_PATH )->with_file( 'home' )->with_name( 'Home' );
-    $extres_home_template->register();
+  $extres_home_template = new \AgriLife\Core\PageTemplate();
+  $extres_home_template->with_path( AG_EXTRES_TEMPLATE_PATH )->with_file( 'home' )->with_name( 'Home' );
+  $extres_home_template->register();
 });
 
 if ( class_exists( 'Acf' ) ) {
-    require_once(AG_EXTRES_DIR_PATH . 'fields/home-details.php') ;
-    require_once(AG_EXTRES_DIR_PATH . 'fields/topimage-details.php') ;
+  require_once(AG_EXTRES_DIR_PATH . 'fields/home-top-details.php');
+  require_once(AG_EXTRES_DIR_PATH . 'fields/home-programs-details.php');
+  require_once(AG_EXTRES_DIR_PATH . 'fields/wide-image-details.php');
 }
