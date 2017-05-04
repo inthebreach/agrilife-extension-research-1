@@ -127,24 +127,32 @@ function research_soliloquy_title_before_caption( $caption, $id, $slide, $data, 
     $this_title = $data['config']['slug'];
 
     if ( isset( $slide['title'] ) && !empty( $slide['title'] ) ) {
+
         $caption = '<h3 class="title">' . $slide['title'] . '</h3>';
         $caption .= '<div class="caption">' . $slide['caption'] . '</div>';
+
     }
 
     return $caption;
+
 }
 
 function research_soliloquy_caption_link( $caption, $id, $slide, $data, $i ) {
 
     if ( isset( $slide['link'] ) && !empty( $slide['link'] ) ) {
+
         $caption = $caption . '<a href="' . $slide['link'] . '" class="soliloquy-caption">';
+
     }
 
     return $caption;
+
 }
 
-function research_soliloquy_caption_close_link( $caption, $id, $slide, $data, $i ) {
+function research_soliloquy_caption_close_link( $caption ) {
+
     return '</a>' . $caption;
+
 }
 
 function research_soliloquy_container_style( $styles ){
@@ -156,18 +164,27 @@ function research_soliloquy_container_style( $styles ){
 function research_soliloquy_set_dimensions( $data, $slider_id ){
 
     if ( wp_is_mobile() ) {
+
+        // Do not display the slider on mobile devices
         return false;
+
     } else {
+
+        // Ensure slides are not scaled down by the user
         $data['config']['slider_size'] = 'full_width';
         $data['config']['slider_width'] = 0;
         $data['config']['slider_height'] = 0;
+
+        // Ensure slides are not cropped by Soliloquy
+        $data['config']['slider'] = 0;
+
     }
 
     return $data;
 
 }
 
-function research_feedzy_changemeta( $meta, $feedURL ){
+function research_feedzy_changemeta( $meta ){
 
     preg_match('/on (\w+\s\d+,\s\d+) at/', $meta, $matches);
 
@@ -175,7 +192,7 @@ function research_feedzy_changemeta( $meta, $feedURL ){
 
 }
 
-function research_feedzy_customoutput( $content, $sc, $feed_title, $feed_items ){
+function research_feedzy_customoutput( $content ){
 
     // Remove inline styles
     $content = preg_replace('/\s+style="[^"]*"/', '', $content);

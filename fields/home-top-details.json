@@ -23,33 +23,6 @@
                 }
             },
             {
-                "default_value": 0,
-                "message": "",
-                "ui": 0,
-                "ui_on_text": "",
-                "ui_off_text": "",
-                "key": "field_58fe4ebe69315",
-                "label": "Full Width",
-                "name": "full_width",
-                "type": "true_false",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": [
-                    [
-                        {
-                            "field": "field_58f7b7c668725",
-                            "operator": "==",
-                            "value": "1"
-                        }
-                    ]
-                ],
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                }
-            },
-            {
                 "post_type": [
                     "soliloquy"
                 ],
@@ -73,25 +46,6 @@
                         }
                     ]
                 ],
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                }
-            },
-            {
-                "default_value": 0,
-                "message": "",
-                "ui": 0,
-                "ui_on_text": "",
-                "ui_off_text": "",
-                "key": "field_58f7b80f68727",
-                "label": "Show Page Title",
-                "name": "show_page_title",
-                "type": "true_false",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
                     "class": "",
