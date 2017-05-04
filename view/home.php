@@ -46,7 +46,7 @@ function research_home_slider() {
 
 function research_home_content() {
 
-    ?>
+    if( !empty(get_the_content()) ) : ?>
     <div class="home-content">
         <section id="content" role="main">
             <?php
@@ -54,7 +54,7 @@ function research_home_content() {
             ?>
         </section><!-- /end #content -->
     </div>
-<?php
+<?php endif;
 
 }
 
@@ -151,7 +151,13 @@ function research_soliloquy_caption_link( $caption, $id, $slide, $data, $i ) {
 
 function research_soliloquy_caption_close_link( $caption ) {
 
-    return '</a>' . $caption;
+    if( preg_match( '/<a href="[^"]*" class="soliloquy-caption"/', $caption ) ){
+
+        $caption .= '</a>';
+
+    }
+
+    return $caption;
 
 }
 
