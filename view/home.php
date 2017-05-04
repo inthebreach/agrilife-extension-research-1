@@ -173,7 +173,7 @@ function research_soliloquy_set_dimensions( $data, $slider_id ){
         // Ensure slides are not scaled down by the user
         $data['config']['slider_size'] = 'full_width';
         $data['config']['slider_width'] = 0;
-        $data['config']['slider_height'] = 0;
+        $data['config']['slider_height'] = 300;
 
         // Ensure slides are not cropped by Soliloquy
         $data['config']['slider'] = 0;
