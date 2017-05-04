@@ -178,6 +178,9 @@ function research_soliloquy_set_dimensions( $data, $slider_id ){
         // Ensure slides are not cropped by Soliloquy
         $data['config']['slider'] = 0;
 
+        // Ensure slider is not scaled for each image
+        $data['config']['smooth'] = 0;
+
     }
 
     return $data;
