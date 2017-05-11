@@ -171,7 +171,7 @@ class RequiredDOM {
                 $image['url'] = str_replace( 'http://', 'https://', $image['url'] );
             }
 
-            $img = sprintf( '<a href=""><img src="%s" alt="%s"></a>',
+            $img = sprintf( '<img src="%s" alt="%s">',
                 $image['url'],
                 $image['alt']
             );
