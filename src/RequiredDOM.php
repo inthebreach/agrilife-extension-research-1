@@ -24,7 +24,7 @@ class RequiredDOM {
         add_filter( 'genesis_do_nav', array( $this, 'custom_nav_class' ), 12, 5 );
 
         // Render the Top Image
-        add_action( 'genesis_after_header', array( $this, 'top_image' ), 11 );
+        add_action( 'genesis_after_header', array( $this, 'banner_fields' ), 11 );
 
         // Render the footer
         add_action( 'genesis_header', array( $this, 'add_extension_footer_content' ) );
@@ -153,11 +153,17 @@ class RequiredDOM {
      * @since 1.0
      * @return void
      */
-    public function top_image(){
+    public function banner_fields(){
 
-        if( get_field('wideimage') ){
+        $title = '';
+        $description = '';
+        $img = '';
+        $linkopen = $linkclose = '';
+        $capopen = $capclose = '';
 
-            $image = get_field( 'wideimage' );
+        if( get_field('bannerimage') ){
+
+            $image = get_field( 'bannerimage' );
 
             $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 
@@ -165,13 +171,32 @@ class RequiredDOM {
                 $image['url'] = str_replace( 'http://', 'https://', $image['url'] );
             }
 
-            $output = sprintf( '<div class="top-image"><img src="%s" alt="%s"></div>',
+            $img = sprintf( '<a href=""><img src="%s" alt="%s"></a>',
                 $image['url'],
                 $image['alt']
             );
 
-            echo $output;
+        }
 
+        if( get_field('bannertitle') || get_field('bannerdescription') ){
+
+            $capopen = '<a class="banner-caption" href=""><div class="banner-caption-inside">';
+            $capclose = '</div></a>';
+
+            if( get_field('bannertitle') )
+                $title = '<div class="title">' . get_field('bannertitle') . '</div>';
+            else if( !empty( get_the_title() ) )
+                $title = '<div class="title">' . get_the_title() . '</div>';
+
+            if( get_field('bannerdescription') )
+                $description = get_field('bannerdescription');
+
+        }
+
+        if(!empty($img)){
+            $content = sprintf( '<div class="banner-fields">%s%s%s%s%s</div>',
+                $capopen, $title, $description, $capclose, $img );
+            echo $content;
         }
 
     }

@@ -1,14 +1,10 @@
 $home-top: "58f7b7bd60267";
-  $carousel-slider: "58f7b7c668725";
-  $full-width: "58fe4ebe69315";
-  $select-carousel-slider: "58f7b7f268726";
-$home-programs: "58f76fa15da9e";
-  $heading: "58f78e65018df";
-  $image: "58f78f81018e0";
-  $link: "58f792e226510";
-  $description: "58f792fb26511";
+$full-width: "58fe4ebe69315";
+$select-carousel-slider: "58f7b7f268726";
+$home-programs-repeater: "58f78e54018de";
+$publications-repeater: "5911c0da608c5";
 
-#acf-group_#{$home-top}{
+#acf-group_#{$home-top} {
 
   .acf-fields > .acf-field-#{$full-width},
   .acf-fields > .acf-field-#{$select-carousel-slider} {
@@ -25,7 +21,7 @@ $home-programs: "58f76fa15da9e";
   }
 }
 
-.acf-field-58f78e54018de {
+.acf-field-#{$home-programs-repeater} {
 
   .acf-fields > .acf-field {
     border-top-width: 0;
@@ -43,3 +39,21 @@ $home-programs: "58f76fa15da9e";
     }
   }
 }
+
+// .acf-fields.-left > .acf-field-#{$publications-repeater} {
+
+//   &:before,
+//   > .acf-label {
+//     display: none;
+//   }
+
+//   > .acf-input {
+//     width: 100%;
+//   }
+
+//   .acf-fields > .acf-field {
+//     &:first-child ~ .acf-field {
+//       border-top-width: 0;
+//     }
+//   }
+// }

@@ -1,0 +1,170 @@
+[
+    {
+        "key": "group_5911c0bcc0836",
+        "title": "Publication",
+        "fields": [
+            {
+                "layouts": [
+                    {
+                        "key": "5911d5b4c05b1",
+                        "name": "publications",
+                        "label": "Publications",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "key": "field_5912130596a0d",
+                                "label": "Title",
+                                "name": "publications_title",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            },
+                            {
+                                "tabs": "all",
+                                "toolbar": "basic",
+                                "media_upload": 0,
+                                "default_value": "",
+                                "delay": 1,
+                                "key": "field_5912133c96a0e",
+                                "label": "Description",
+                                "name": "publications_description",
+                                "type": "wysiwyg",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            },
+                            {
+                                "sub_fields": [
+                                    {
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "key": "field_5911c182608c6",
+                                        "label": "Title",
+                                        "name": "publication_title",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        }
+                                    },
+                                    {
+                                        "default_value": "",
+                                        "new_lines": "",
+                                        "maxlength": "",
+                                        "placeholder": "",
+                                        "rows": 2,
+                                        "key": "field_5911c22a608c7",
+                                        "label": "Description",
+                                        "name": "publication_description",
+                                        "type": "textarea",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        }
+                                    },
+                                    {
+                                        "tabs": "all",
+                                        "toolbar": "full",
+                                        "media_upload": 1,
+                                        "default_value": "",
+                                        "delay": 1,
+                                        "key": "field_5911c241608c8",
+                                        "label": "Overlay Content",
+                                        "name": "publication_overlay",
+                                        "type": "wysiwyg",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        }
+                                    }
+                                ],
+                                "min": 1,
+                                "max": 0,
+                                "layout": "row",
+                                "button_label": "Add Publication",
+                                "collapsed": "",
+                                "key": "field_5911c0da608c5",
+                                "label": "Publications",
+                                "name": "publications",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    }
+                ],
+                "min": "",
+                "max": "",
+                "button_label": "Add Row",
+                "key": "field_5911d5afe3a05",
+                "label": "Flexible Content",
+                "name": "flexible_content",
+                "type": "flexible_content",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]

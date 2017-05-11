@@ -35,5 +35,19 @@ add_action( 'agrilife_core_init', function() {
 if ( class_exists( 'Acf' ) ) {
   require_once(AG_EXTRES_DIR_PATH . 'fields/home-top-details.php');
   require_once(AG_EXTRES_DIR_PATH . 'fields/home-programs-details.php');
-  require_once(AG_EXTRES_DIR_PATH . 'fields/wide-image-details.php');
+  require_once(AG_EXTRES_DIR_PATH . 'fields/banner-details.php');
+}
+
+// Add Publication ACF fields to Flexible Columns field group
+add_filter('acf/load_field/key=field_5772ab6603192', 'aer_acf_load_publications');
+function aer_acf_load_publications($field) {
+
+    $json = file_get_contents(AG_EXTRES_DIR_PATH . 'fields/publications-details.json');
+    $new_field = json_decode( $json, true );
+    $subfield = $new_field[0]['fields'][0]['layouts'][0];
+
+    $field['layouts'][] = $subfield;
+
+    return $field;
+
 }

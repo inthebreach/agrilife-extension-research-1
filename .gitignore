@@ -38,6 +38,8 @@ dwsync.xml
 intermediate
 .idea
 cache
+*.css
+*.css.map
 
 # Ignore dependencies using package control
 node_modules/*

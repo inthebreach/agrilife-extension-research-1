@@ -1,11 +1,49 @@
 [
     {
         "key": "group_58f7ba1d9ef3c",
-        "title": "Wide Image",
+        "title": "Banner",
         "fields": [
             {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_5911e10f596da",
+                "label": "Title",
+                "name": "bannertitle",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "new_lines": "wpautop",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": 4,
+                "key": "field_5911e11c596db",
+                "label": "Description",
+                "name": "bannerdescription",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
                 "return_format": "array",
-                "preview_size": "thumbnail",
+                "preview_size": "full",
                 "library": "all",
                 "min_width": 1024,
                 "min_height": "",
@@ -16,7 +54,7 @@
                 "mime_types": "",
                 "key": "field_58f7ba36e089a",
                 "label": "Image",
-                "name": "wideimage",
+                "name": "bannerimage",
                 "type": "image",
                 "instructions": "",
                 "required": 0,
