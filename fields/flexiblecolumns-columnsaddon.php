@@ -53,7 +53,7 @@ acf_add_local_field_group(array (
 			'placeholder' => '',
 			'return_format' => 'value',
 			'key' => 'field_59107510580c5',
-			'label' => 'Sizes',
+			'label' => 'Width',
 			'name' => 'column_widths',
 			'type' => 'select',
 			'instructions' => '',
