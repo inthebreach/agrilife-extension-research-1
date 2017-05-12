@@ -1,6 +1,6 @@
 <?php
 
-namespace AgriLife\Extension;
+namespace AgriLife\ExtensionResearch;
 
 class Asset {
 

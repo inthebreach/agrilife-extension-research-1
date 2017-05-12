@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'AgriLife\\Extension\\' => array($baseDir . '/src'),
+    'AgriLife\\ExtensionResearch\\' => array($baseDir . '/src'),
 );
