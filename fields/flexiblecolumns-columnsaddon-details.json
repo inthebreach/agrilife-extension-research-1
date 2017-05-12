@@ -1,0 +1,146 @@
+[
+    {
+        "key": "group_5915ba7560b11",
+        "title": "Flexible Columns - Columns Row Enhancement",
+        "fields": [
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "summary": "Summaries",
+                    "full": "Full Content"
+                },
+                "default_value": [
+                    "full"
+                ],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_59107c430b640",
+                "label": "Type",
+                "name": "type",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "3": "25% | 75%",
+                    "4": "33% | 67%",
+                    "5": "40% | 60%",
+                    "6": "50% | 50%",
+                    "7": "60% | 40%",
+                    "8": "67% | 33%",
+                    "9": "75% | 25%"
+                },
+                "default_value": [
+                    "6"
+                ],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_59107510580c5",
+                "label": "Sizes",
+                "name": "column_widths",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_59107c430b640",
+                            "operator": "==",
+                            "value": "full"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "default_value": "",
+                "delay": 1,
+                "key": "field_59107e0b7d745",
+                "label": "First Column",
+                "name": "column_one",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_59107c430b640",
+                            "operator": "==",
+                            "value": "full"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "default_value": "",
+                "delay": 1,
+                "key": "field_59107eef9fa77",
+                "label": "Second Column",
+                "name": "column_two",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_59107c430b640",
+                            "operator": "==",
+                            "value": "full"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]
