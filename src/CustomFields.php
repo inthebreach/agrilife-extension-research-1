@@ -11,7 +11,6 @@ class CustomFields {
             require_once(AG_EXTRES_DIR_PATH . 'fields/home-top-details.php');
             require_once(AG_EXTRES_DIR_PATH . 'fields/home-programs-details.php');
             require_once(AG_EXTRES_DIR_PATH . 'fields/banner-details.php');
-            require_once(AG_EXTRES_DIR_PATH . 'fields/flexiblecolumns-columnsaddon.php');
         }
 
         // Add ACF fields to Flexible Columns field group

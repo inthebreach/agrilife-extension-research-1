@@ -38,7 +38,7 @@ Functionality for AgriLife Extension Research sites
 
 ## Development Notes
 
-None
+1. The ACF fields imported as JSON (flexiblecolumns-columnsaddon-details.json and publications-details.json) do not receive the "_name" property needed by the plugin while processing a field, which results in PHP Notice messages in debug mode. Add this property manually to new ACF fields in the JSON files.
 
 ## Development Requirements
 
