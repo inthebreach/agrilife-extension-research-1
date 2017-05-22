@@ -6,54 +6,36 @@ $publications-repeater: "5911c0da608c5";
 
 #acf-group_#{$home-top} {
 
-  .acf-fields > .acf-field-#{$full-width},
-  .acf-fields > .acf-field-#{$select-carousel-slider} {
-    border-top-width: 0;
+	.acf-fields > .acf-field-#{$full-width},
+	.acf-fields > .acf-field-#{$select-carousel-slider} {
+		border-top-width: 0;
 
-    > .acf-label,
-    > .acf-input {
-      padding: 0 12px 15px;
-    }
+		> .acf-label,
+		> .acf-input {
+			padding: 0 12px 15px;
+		}
 
-    > .acf-label label:before {
-      content: "- ";
-    }
-  }
+		> .acf-label label:before {
+			content: "- ";
+		}
+	}
 }
 
 .acf-field-#{$home-programs-repeater} {
 
-  .acf-fields > .acf-field {
-    border-top-width: 0;
+	.acf-fields > .acf-field {
+		border-top-width: 0;
 
-    > .acf-label,
-    > .acf-input {
-      padding: 0 12px 10px;
-    }
+		> .acf-label,
+		> .acf-input {
+			padding: 0 12px 10px;
+		}
 
-    &:first-child {
-      .acf-label,
-      .acf-input {
-        padding-top: 10px;
-      }
-    }
-  }
+		&:first-child {
+			.acf-label,
+			.acf-input {
+				padding-top: 10px;
+			}
+		}
+	}
 }
-
-// .acf-fields.-left > .acf-field-#{$publications-repeater} {
-
-//   &:before,
-//   > .acf-label {
-//     display: none;
-//   }
-
-//   > .acf-input {
-//     width: 100%;
-//   }
-
-//   .acf-fields > .acf-field {
-//     &:first-child ~ .acf-field {
-//       border-top-width: 0;
-//     }
-//   }
-// }

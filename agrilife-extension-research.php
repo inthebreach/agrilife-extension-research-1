@@ -32,4 +32,8 @@ add_action( 'agrilife_core_init', function() {
   $extres_home_template = new \AgriLife\Core\PageTemplate();
   $extres_home_template->with_path( AG_EXTRES_TEMPLATE_PATH )->with_file( 'home' )->with_name( 'Home' );
   $extres_home_template->register();
+
+  $extres_staff_template = new \AgriLife\Core\PageTemplate();
+  $extres_staff_template->with_path( AG_EXTRES_TEMPLATE_PATH )->with_file( 'staff' )->with_name( 'Staff' );
+  $extres_staff_template->register();
 });
