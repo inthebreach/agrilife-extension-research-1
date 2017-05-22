@@ -1,5 +1,8 @@
 # AgriLife Extension Research (WordPress Plugin)
 
+[ ![Codeship Status for AgriLife/agrilife-extension-research](https://app.codeship.com/projects/1ade8650-2133-0135-19e8-660310782f44/status?branch=staging)](https://app.codeship.com/projects/221267)
+[ ![Codeship Status for AgriLife/agrilife-extension-research](https://app.codeship.com/projects/1ade8650-2133-0135-19e8-660310782f44/status?branch=master)](https://app.codeship.com/projects/221267)
+
 Functionality for AgriLife Extension Research sites
 
 ## WordPress Requirements
