@@ -26,6 +26,10 @@ class CustomFields {
      */
     public function aer_acf_load_extras($field) {
 
+        $screen = get_current_screen();
+        if($screen->post_type == 'acf-field-group')
+            return $field;
+
         // Add Publications row type
         $pub = file_get_contents(AG_EXTRES_DIR_PATH . 'fields/publications-details.json');
         $pub_field = json_decode( $pub, true );
