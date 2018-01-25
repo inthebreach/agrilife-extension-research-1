@@ -33,7 +33,8 @@ add_action( 'init', function(){
     require_once(AG_EXTRES_DIR_PATH . 'fields/research-project-details.php');
   }
 
-  $extres_project = new \AgriLife\ExtensionResearch\PostType( 'Research Project' );
+  $project = new \AgriLife\ExtensionResearch\PostType( 'Research Project' );
+  $project_templates = new \AgriLife\ExtensionResearch\Templates( 'research-project', 'single-research-project.php', 'archive-research-project.php' );
 
 });
 
