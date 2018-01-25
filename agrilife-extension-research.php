@@ -26,6 +26,17 @@ $extres_widget_areas = new \AgriLife\ExtensionResearch\WidgetAreas();
 
 $extres_custom_fields = new \AgriLife\ExtensionResearch\CustomFields();
 
+// Load custom post type
+add_action( 'init', function(){
+
+  if ( class_exists( 'Acf' ) ) {
+    require_once(AG_EXTRES_DIR_PATH . 'fields/research-project-details.php');
+  }
+
+  $extres_project = new \AgriLife\ExtensionResearch\PostType( 'Research Project' );
+
+});
+
 add_action( 'agrilife_core_init', function() {
   $extres_home_template = new \AgriLife\Core\PageTemplate();
   $extres_home_template->with_path( AG_EXTRES_TEMPLATE_PATH )->with_file( 'home' )->with_name( 'Home' );
