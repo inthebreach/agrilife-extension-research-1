@@ -3,9 +3,7 @@
  * The Template for displaying all people single posts
  */
 
-
 get_header(); ?>
-
 <div class="content-sidebar-wrap">
 	<main class="content"><?php
 

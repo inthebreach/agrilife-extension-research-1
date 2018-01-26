@@ -14,14 +14,12 @@ class Templates {
 
 	public function __construct( $posttype, $single, $archive ) {
 
-		$post_type = $posttype;
-		$single_file = $single;
-		$archive_file = $archive;
+		$this->post_type = $posttype;
+		$this->single_file = $single;
+		$this->archive_file = $archive;
 
 		add_filter( 'archive_template', array( $this, 'get_archive_template' ) );
 		add_filter( 'single_template', array( $this, 'get_single_template' ) );
-
-		echo '<script>console.log("Construct ' . $post_type . ' templates");</script>';
 
 	}
 
@@ -34,10 +32,8 @@ class Templates {
 
 		global $post;
 
-		echo '<script>console.log("get_archive_template");</script>';
-
-		if ( is_post_type_archive( $post_type ) ) {
-			$archive_template = AG_EXTRES_TEMPLATE_PATH . '/' . $archive_file;
+		if ( is_post_type_archive( $this->post_type ) ) {
+			$archive_template = AG_EXTRES_TEMPLATE_PATH . '/' . $this->archive_file;
 		}
 
 		return $archive_template;
@@ -53,10 +49,8 @@ class Templates {
 
 		global $post;
 
-		echo '<script>console.log("get_single_template");</script>';
-
-		if ( get_query_var( 'post_type' ) == $post_type ) {
-			$single_template = AG_EXTRES_TEMPLATE_PATH . '/' . $single_file;
+		if ( get_query_var( 'post_type' ) == $this->post_type ) {
+			$single_template = AG_EXTRES_TEMPLATE_PATH . '/' . $this->single_file;
 		}
 
 		return $single_template;
