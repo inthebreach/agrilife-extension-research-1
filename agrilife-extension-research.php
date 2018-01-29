@@ -43,3 +43,11 @@ add_action( 'agrilife_core_init', function() {
   $extres_home_template->with_path( AG_EXTRES_TEMPLATE_PATH )->with_file( 'home' )->with_name( 'Home' );
   $extres_home_template->register();
 });
+
+function fix_custom_posts_per_page( $query ) {
+  if ( !is_admin() && $query->query['post_type'] == 'research-project' && is_post_type_archive('research-project') ) {
+    $query->set( 'posts_per_page', '10' );
+    return;
+  }
+}
+add_action( 'pre_get_posts', 'fix_custom_posts_per_page' );

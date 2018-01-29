@@ -5,15 +5,15 @@
 get_header(); ?>
 <div id="primary">
     <div id="content" role="main">
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header">
+<article id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
+    <header class="entry-header columns">
         <h1>
             <?php the_title(); ?>
         </h1>
     </header>
 
     <!-- Display movie review contents -->
-    <div class="entry-content"><?php
+    <div class="entry-content columns"><?php
 
         $fields = get_fields();
         foreach ($fields as $key => $value){
