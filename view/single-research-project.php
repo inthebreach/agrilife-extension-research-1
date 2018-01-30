@@ -5,95 +5,115 @@
 get_header(); ?>
 <div id="primary">
     <div id="content" role="main">
-<article id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
-    <header class="entry-header columns">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <header class="entry-header row"><div class="columns">
         <h1>
-            <?php the_title(); ?>
+            Research > <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h1>
-    </header>
-    <?php
-        if ( have_posts() ) :
-            while ( have_posts() ) : the_post();
-                if ( !empty( get_the_content() ) ) :
-                    ?><div class="entry-content columns"><?php
-                    the_content();
-                    ?></div><?php
+    </div></header>
+    <div class="entry-content">
+        <div class="row">
+            <div class="columns small-12 medium-12 large-12"><?php
+                if ( have_posts() ) :
+                    while ( have_posts() ) : the_post();
+                        if ( !empty( get_the_content() ) ) :
+                            the_content();
+                        endif;
+                    endwhile;
                 endif;
-            endwhile;
-        endif;
-    ?>
-    <div class="entry-content columns"><?php
-        $fields = get_fields();
-        foreach ($fields as $key => $value){
+            ?><h2>Summary</h2></div>
+        </div>
+        <div class="row">
+            <div class="columns research-left small-12 medium-9 large-9"><?php
 
-            if( !empty($value) ){
+                $fields = get_fields();
 
-                echo '<div class="' . $key . '">';
+                if( !empty( $fields['project_summary'] ) ){
 
-                if( $key == 'project_leader' ){
+                    echo '<div class="project_summary">';
 
-                    if( !empty( $value['project_leader_name'] ) ){
+                    if( !empty( $fields['project_summary_2'] ) ){
 
-                        echo '<div class="project_leader_name"><h2>';
-                        echo $value['project_leader_name'];
-                        echo '</h2></div>';
-                        echo '<div class="project_leader_description">';
+                        ?><div class="project-summary-2 right"><?php
 
-                        if( !empty( $value['photo'] ) ){
-                            echo '<div class="photo"><img';
+                            echo $fields['project_summary_2'];
 
-                            if( !empty( $value['photo']['title'] ) )
-                                echo ' title="' . $value['photo']['title'] . '"';
-
-                            if( !empty( $value['photo']['alt'] ) )
-                                echo ' alt="' . $value['photo']['alt'] . '"';
-
-                            echo ' src="';
-                            echo $value['photo']['sizes']['medium'];
-                            echo '">';
-
-                            if( !empty( $value['image_highlight'] ) ){
-                                echo '<div class="image_highlight">';
-                                echo $value['image_highlight'];
-                                echo '</div>';
-                            }
-
-                            echo '</div>';
-                        }
-
-                        echo $value['project_leader_description'];
-                        echo '</div>';
+                        ?></div><?php
 
                     }
 
-                } else if( $key == 'project_summary' ){
-
-                    echo '<h2>Summary</h2>';
-                    echo $value;
-
-                } else if( $key == 'team_members' ){
-
-                    echo '<h2>Team Members</h2>';
-                    echo $value;
-
-                } else if( $key == 'select_publications' ){
-
-                    echo '<h2>Publications</h2>';
-                    echo $value;
-
-                } else {
-
-                    echo $value;
+                    echo $fields['project_summary'];
+                    echo '</div>';
 
                 }
 
-                echo '</div>';
+                if( !empty( $fields['current_research_projects'] ) ){
 
-            }
+                    foreach ($fields['current_research_projects'] as $key => $value) {
 
-        }
+                        echo $value['research_project'];
 
-    ?></div>
+                    }
+
+                }
+
+                if( !empty( $fields['select_publications'] ) ){
+
+                    echo '<div class="select_publications"><h2>Publications</h2>';
+                    echo $fields['select_publications'];
+                    echo '</div>';
+
+                }
+
+            ?></div><div class="columns research-right small-12 medium-3 large-3"><?php
+
+                $value = $fields['project_leader'];
+
+                if( !empty( $value ) && !empty( $value['project_leader_name'] ) ){
+
+                    echo '<div class="project_leader"><div class="project_leader_name"><h2>';
+                    echo $value['project_leader_name'];
+                    echo '</h2></div>';
+                    echo '<div class="project_leader_description">';
+
+                    if( !empty( $value['photo'] ) ){
+                        echo '<div class="photo"><img';
+
+                        if( !empty( $value['photo']['title'] ) )
+                            echo ' title="' . $value['photo']['title'] . '"';
+
+                        if( !empty( $value['photo']['alt'] ) )
+                            echo ' alt="' . $value['photo']['alt'] . '"';
+
+                        echo ' src="';
+                        echo $value['photo']['sizes']['medium'];
+                        echo '">';
+
+                        if( !empty( $value['image_highlight'] ) ){
+                            echo '<div class="image_highlight">';
+                            echo $value['image_highlight'];
+                            echo '</div>';
+                        }
+
+                        echo '</div>';
+                    }
+
+                    echo $value['project_leader_description'];
+                    echo '</div></div>';
+
+                }
+
+                if( !empty( $fields['team_members'] ) ){
+
+                    echo '<div class="team_members"><h2>Team Members</h2>';
+                    echo $fields['team_members'];
+                    echo '</div>';
+
+                }
+
+            ?></div>
+        </div>
+    </div>
 </article>
     </div>
 </div>
