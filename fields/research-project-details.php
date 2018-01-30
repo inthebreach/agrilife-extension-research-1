@@ -2,11 +2,11 @@
 
 if( function_exists('acf_add_local_field_group') ):
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_5a6a08dc21e27',
 	'title' => 'Research Project Information',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_5a6a08e83fa1b',
 			'label' => 'Project Summary',
 			'name' => 'project_summary',
@@ -14,7 +14,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -25,7 +25,26 @@ acf_add_local_field_group(array (
 			'media_upload' => 1,
 			'delay' => 0,
 		),
-		array (
+		array(
+			'key' => 'field_5a708bc7bf97c',
+			'label' => 'Project Summary 2',
+			'name' => 'project_summary_2',
+			'type' => 'wysiwyg',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
+		),
+		array(
 			'key' => 'field_5a6a09383fa1c',
 			'label' => 'Current Research Projects',
 			'name' => 'current_research_projects',
@@ -33,7 +52,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -43,8 +62,8 @@ acf_add_local_field_group(array (
 			'max' => 0,
 			'layout' => 'table',
 			'button_label' => 'Add Research Project',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_5a6a09b73fa1d',
 					'label' => 'Research Project',
 					'name' => 'research_project',
@@ -52,7 +71,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -65,7 +84,7 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_5a6a0a5b3fa1e',
 			'label' => 'Project Leader',
 			'name' => 'project_leader',
@@ -73,14 +92,14 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
 			'layout' => 'block',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_5a6a0a7d3fa1f',
 					'label' => 'Project Leader Name',
 					'name' => 'project_leader_name',
@@ -88,7 +107,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -99,7 +118,7 @@ acf_add_local_field_group(array (
 					'append' => '',
 					'maxlength' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5a6a0ac63fa20',
 					'label' => 'Project Leader Description',
 					'name' => 'project_leader_description',
@@ -107,7 +126,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -118,7 +137,7 @@ acf_add_local_field_group(array (
 					'media_upload' => 1,
 					'delay' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_5a6a0b223fa21',
 					'label' => 'Photo',
 					'name' => 'photo',
@@ -126,7 +145,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -142,7 +161,7 @@ acf_add_local_field_group(array (
 					'max_size' => '',
 					'mime_types' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5a6a0b423fa22',
 					'label' => 'Image Highlight',
 					'name' => 'image_highlight',
@@ -150,7 +169,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -163,7 +182,7 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_5a6a0b923fa23',
 			'label' => 'Team Members',
 			'name' => 'team_members',
@@ -171,18 +190,18 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'default_value' => '',
+			'default_value' => '<ul><li>Team Member #1</li></ul>',
 			'tabs' => 'visual',
 			'toolbar' => 'simple_text',
 			'media_upload' => 0,
 			'delay' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5a6a0bdc3fa24',
 			'label' => 'Select Publications',
 			'name' => 'select_publications',
@@ -190,21 +209,21 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'default_value' => '',
+			'default_value' => '<ul><li>Publication #1</li></ul>',
 			'tabs' => 'visual',
 			'toolbar' => 'simple_text',
 			'media_upload' => 0,
 			'delay' => 0,
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'post_type',
 				'operator' => '==',
 				'value' => 'research-project',

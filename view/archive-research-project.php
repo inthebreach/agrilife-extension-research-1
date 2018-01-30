@@ -20,8 +20,8 @@ get_header(); ?>
 
 					if( !empty( get_field('project_summary') ) ){
 
-						$summary = wp_strip_all_tags( get_field('project_summary') );
-						$summary = wp_trim_words( $summary, '...' );
+						$summary = wp_strip_all_tags( get_the_content() );
+						$summary = wp_trim_words( $summary, 55, '...' );
 						echo '<p>' . $summary . '</p>';
 
 					}

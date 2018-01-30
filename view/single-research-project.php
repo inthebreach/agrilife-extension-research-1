@@ -11,10 +11,18 @@ get_header(); ?>
             <?php the_title(); ?>
         </h1>
     </header>
-
-    <!-- Display movie review contents -->
+    <?php
+        if ( have_posts() ) :
+            while ( have_posts() ) : the_post();
+                if ( !empty( get_the_content() ) ) :
+                    ?><div class="entry-content columns"><?php
+                    the_content();
+                    ?></div><?php
+                endif;
+            endwhile;
+        endif;
+    ?>
     <div class="entry-content columns"><?php
-
         $fields = get_fields();
         foreach ($fields as $key => $value){
 
@@ -89,5 +97,4 @@ get_header(); ?>
 </article>
     </div>
 </div>
-<?php wp_reset_query(); ?>
 <?php get_footer(); ?>
