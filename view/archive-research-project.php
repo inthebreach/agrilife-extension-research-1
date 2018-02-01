@@ -3,6 +3,28 @@
  * The Template for displaying all people single posts
  */
 
+// Queue styles
+add_action( 'wp_enqueue_scripts', 'aer_project_register_styles' );
+add_action( 'wp_enqueue_scripts', 'aer_project_enqueue_styles' );
+
+function aer_project_register_styles(){
+	?><script>console.log("register");</script><?php
+    wp_register_style(
+        'extension-research-project-styles',
+        AG_EXTRES_DIR_URL . 'css/research-project.css',
+        array(),
+        '',
+        'screen'
+    );
+
+}
+
+function aer_project_enqueue_styles(){
+
+    wp_enqueue_style( 'extension-research-project-styles' );
+
+}
+
 get_header(); ?>
 <div class="content-sidebar-wrap">
 	<main class="content">

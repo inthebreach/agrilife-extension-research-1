@@ -56,14 +56,6 @@ class Asset {
         );
 
         wp_register_style(
-            'extension-research-project-styles',
-            AG_EXTRES_DIR_URL . 'css/research-project.css',
-            array(),
-            '',
-            'screen'
-        );
-
-        wp_register_style(
             'extension-research-font',
             'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700',
             array(),
@@ -82,7 +74,6 @@ class Asset {
     public function enqueue_extres_styles() {
 
         wp_enqueue_style( 'extension-research-styles' );
-        wp_enqueue_style( 'extension-research-project-styles' );
         wp_enqueue_style( 'extension-research-font' );
 
     }

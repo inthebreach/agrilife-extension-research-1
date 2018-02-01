@@ -2,6 +2,28 @@
  /*Template Name: Research Project
  */
 
+// Queue styles
+add_action( 'wp_enqueue_scripts', 'aer_project_register_styles' );
+add_action( 'wp_enqueue_scripts', 'aer_project_enqueue_styles' );
+
+function aer_project_register_styles(){
+    ?><script>console.log("register");</script><?php
+    wp_register_style(
+        'extension-research-project-styles',
+        AG_EXTRES_DIR_URL . 'css/research-project.css',
+        array(),
+        '',
+        'screen'
+    );
+
+}
+
+function aer_project_enqueue_styles(){
+
+    wp_enqueue_style( 'extension-research-project-styles' );
+
+}
+
 get_header(); ?>
 <div id="primary">
     <div id="content" role="main">
@@ -57,57 +79,63 @@ get_header(); ?>
 
                 }
 
-                if( !empty( $fields['select_publications'] ) ){
+                ?><div class="research-right"><?php
 
-                    echo '<div class="select_publications"><h2>Publications</h2>';
-                    echo $fields['select_publications'];
-                    echo '</div>';
+                    $project_leader = $fields['project_leader'];
 
-                }
+                    if( !empty( $project_leader ) && !empty( $project_leader['project_leader_name'] ) ){
 
-            ?></div><div class="columns research-right small-12 medium-3 large-3"><?php
+                        echo '<div class="project_leader"><div class="project_leader_name"><h2>';
+                        echo $project_leader['project_leader_name'];
+                        echo '</h2></div>';
+                        echo '<div class="project_leader_description">';
 
-                $value = $fields['project_leader'];
+                        if( !empty( $project_leader['photo'] ) ){
 
-                if( !empty( $value ) && !empty( $value['project_leader_name'] ) ){
+                            echo '<div class="photo"><img';
 
-                    echo '<div class="project_leader"><div class="project_leader_name"><h2>';
-                    echo $value['project_leader_name'];
-                    echo '</h2></div>';
-                    echo '<div class="project_leader_description">';
+                            if( !empty( $project_leader['photo']['title'] ) )
+                                echo ' title="' . $project_leader['photo']['title'] . '"';
 
-                    if( !empty( $value['photo'] ) ){
-                        echo '<div class="photo"><img';
+                            if( !empty( $project_leader['photo']['alt'] ) )
+                                echo ' alt="' . $project_leader['photo']['alt'] . '"';
 
-                        if( !empty( $value['photo']['title'] ) )
-                            echo ' title="' . $value['photo']['title'] . '"';
+                            echo ' src="';
+                            echo $project_leader['photo']['sizes']['medium'];
+                            echo '">';
 
-                        if( !empty( $value['photo']['alt'] ) )
-                            echo ' alt="' . $value['photo']['alt'] . '"';
+                            if( !empty( $project_leader['image_highlight'] ) ){
+                                echo '<div class="image_highlight">';
+                                echo $project_leader['image_highlight'];
+                                echo '</div>';
+                            }
 
-                        echo ' src="';
-                        echo $value['photo']['sizes']['medium'];
-                        echo '">';
-
-                        if( !empty( $value['image_highlight'] ) ){
-                            echo '<div class="image_highlight">';
-                            echo $value['image_highlight'];
                             echo '</div>';
+
                         }
 
-                        echo '</div>';
+                        echo $project_leader['project_leader_description'];
+                        echo '</div></div>';
+
                     }
 
-                    echo $value['project_leader_description'];
-                    echo '</div></div>';
+                    if( !empty( $fields['team_members'] ) ){
 
-                }
+                        echo '<div class="team_members"><h2>Team Members</h2>';
+                        echo $fields['team_members'];
+                        echo '</div>';
 
-                if( !empty( $fields['team_members'] ) ){
+                    }
 
-                    echo '<div class="team_members"><h2>Team Members</h2>';
-                    echo $fields['team_members'];
-                    echo '</div>';
+                ?></div><?php
+
+                if( !empty( $fields['select_publications'] ) ){
+
+                    ?><div class="select_publications"><h2>Publications</h2><?php
+
+                        echo $fields['select_publications'];
+
+                    ?></div><?php
 
                 }
 
