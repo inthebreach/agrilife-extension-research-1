@@ -6,6 +6,13 @@
 add_action( 'wp_enqueue_scripts', 'aer_project_register_styles' );
 add_action( 'wp_enqueue_scripts', 'aer_project_enqueue_styles' );
 
+if(get_the_post_thumbnail()){
+
+    add_action( 'genesis_seo_title', 'aer_remove_header_title' );
+    add_action( 'genesis_site_title', 'aer_featured_image_in_header' );
+
+}
+
 function aer_project_register_styles(){
 
     wp_register_style(
@@ -24,13 +31,30 @@ function aer_project_enqueue_styles(){
 
 }
 
+function aer_remove_header_title(){
+
+    $title = '';
+    return $title;
+
+}
+
+function aer_featured_image_in_header(){
+
+    ?><div class="research-project-featured-image"><?php
+
+       the_post_thumbnail( 'full' );
+
+    ?></div><?php
+
+};
+
 get_header(); ?>
 <div id="primary">
     <div id="content" role="main">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <header class="entry-header row"><div class="columns">
                 <h1>
-                    Research > <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    Research > <?php the_title(); ?>
                 </h1>
             </div></header>
             <div class="entry-content">

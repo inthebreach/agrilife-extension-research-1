@@ -5,6 +5,15 @@
 $medium: 40.0625em;
 $large: 1140px;
 
+
+.single-research-project .title-area .research-project-featured-image {
+	min-height: 70px;
+
+	img {
+		width: 100%;
+	}
+}
+
 .research-project {
 
 	h2 {
