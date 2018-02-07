@@ -98,7 +98,13 @@ get_header(); ?>
 
                             foreach ($fields['current_research_projects'] as $key => $value) {
 
-                                echo $value['research_project'];
+                                ?><div class="aer-accordion"><?php
+
+                                    echo $value['research_project'];
+
+                                    ?>
+                                    <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
+                                </div><?php
 
                             }
 
@@ -165,11 +171,13 @@ get_header(); ?>
 
                         if( !empty( $fields['select_publications'] ) ){
 
-                            ?><div class="select-publications"><h2>Publications</h2><?php
+                            ?><div class="select-publications aer-accordion"><h2>Publications</h2><?php
 
                                 echo $fields['select_publications'];
 
-                            ?></div><?php
+                                ?>
+                                <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
+                            </div><?php
 
                         }
 

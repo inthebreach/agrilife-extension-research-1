@@ -1,5 +1,6 @@
 /* Template Name: Research Project
  */
+@import "compass";
 
 // AgriFlex3 viewport breakpoints
 $medium: 40.0625em;
@@ -28,6 +29,43 @@ $large: 1140px;
 
 			float: right;
 
+		}
+
+	}
+
+	.aer-accordion {
+		$height: 38px;
+		$top-buffer: 10px;
+
+		height: 180px + $height;
+		padding-bottom: $height;
+		overflow: hidden;
+		position: relative;
+
+		&.aer-accordion-open {
+			height: auto;
+		}
+
+		.aer-accordion-button {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			line-height: $height;
+			@include background-image(linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%));
+
+			a {
+				display: inline-block;
+				line-height: $height - $top-buffer;
+				border: 1px solid #000;
+				border-radius: 10px;
+				padding-left: 10px;
+				padding-right: 10px;
+				text-decoration: none;
+				background: #fff;
+				vertical-align: bottom;
+			}
 		}
 
 	}
