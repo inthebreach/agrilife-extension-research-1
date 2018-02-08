@@ -42,10 +42,10 @@
                 "delay": 0
             },
             {
-                "key": "field_5a6a09383fa1c",
-                "label": "Current Research Projects",
-                "name": "current_research_projects",
-                "type": "repeater",
+                "key": "field_5a7c6446791d7",
+                "label": "Research Project 1",
+                "name": "project-research-1",
+                "type": "wysiwyg",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -54,32 +54,68 @@
                     "class": "",
                     "id": ""
                 },
-                "collapsed": "",
-                "min": 0,
-                "max": 0,
-                "layout": "table",
-                "button_label": "Add Research Project",
-                "sub_fields": [
-                    {
-                        "key": "field_5a6a09b73fa1d",
-                        "label": "Research Project",
-                        "name": "research_project",
-                        "type": "wysiwyg",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
-                        "tabs": "visual",
-                        "toolbar": "full",
-                        "media_upload": 0,
-                        "delay": 1
-                    }
-                ]
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5a7c649a791d8",
+                "label": "Research Project 2",
+                "name": "project-research-2",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5a7c64a1791d9",
+                "label": "Research Project 3",
+                "name": "project-research-3",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5a7c64a8791da",
+                "label": "Research Project 4",
+                "name": "project-research-4",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
             },
             {
                 "key": "field_5a6a0a5b3fa1e",
