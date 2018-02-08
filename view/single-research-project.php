@@ -94,19 +94,51 @@ get_header(); ?>
 
                         }
 
-                        if( !empty( $fields['current_research_projects'] ) ){
+                        if( !empty( $fields['project-research-1'] ) ){
 
-                            foreach ($fields['current_research_projects'] as $key => $value) {
+                            ?><div class="aer-accordion"><?php
 
-                                ?><div class="aer-accordion"><?php
+                                echo $fields['project-research-1'];
 
-                                    echo $value['research_project'];
+                                ?>
+                                <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
+                            </div><?php
 
-                                    ?>
-                                    <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
-                                </div><?php
+                        }
 
-                            }
+                        if( !empty( $fields['project-research-2'] ) ){
+
+                            ?><div class="aer-accordion"><?php
+
+                                echo $fields['project-research-2'];
+
+                                ?>
+                                <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
+                            </div><?php
+
+                        }
+
+                        if( !empty( $fields['project-research-3'] ) ){
+
+                            ?><div class="aer-accordion"><?php
+
+                                echo $fields['project-research-3'];
+
+                                ?>
+                                <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
+                            </div><?php
+
+                        }
+
+                        if( !empty( $fields['project-research-4'] ) ){
+
+                            ?><div class="aer-accordion"><?php
+
+                                echo $fields['project-research-4'];
+
+                                ?>
+                                <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
+                            </div><?php
 
                         }
 
