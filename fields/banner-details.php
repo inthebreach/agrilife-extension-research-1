@@ -82,6 +82,13 @@ acf_add_local_field_group(array (
 				'value' => AG_EXTRES_TEMPLATE_PATH . '/home.php',
 			),
 		),
+		array (
+			array (
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'research-project',
+			),
+		),
 	),
 	'menu_order' => 0,
 	'position' => 'acf_after_title',

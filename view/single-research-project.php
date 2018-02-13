@@ -6,13 +6,6 @@
 add_action( 'wp_enqueue_scripts', 'aer_project_register_styles' );
 add_action( 'wp_enqueue_scripts', 'aer_project_enqueue_styles' );
 
-if(get_the_post_thumbnail()){
-
-    add_action( 'genesis_seo_title', 'aer_remove_header_title' );
-    add_action( 'genesis_site_title', 'aer_featured_image_in_header' );
-
-}
-
 function aer_project_register_styles(){
 
     wp_register_style(
@@ -31,24 +24,9 @@ function aer_project_enqueue_styles(){
 
 }
 
-function aer_remove_header_title(){
-
-    $title = '';
-    return $title;
-
-}
-
-function aer_featured_image_in_header(){
-
-    ?><div class="research-project-featured-image"><?php
-
-       the_post_thumbnail( 'full' );
-
-    ?></div><?php
-
-};
-
-get_header(); ?>
+get_header();
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post(); ?>
 <div id="primary">
     <div id="content" role="main">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -59,46 +37,43 @@ get_header(); ?>
             </div></header>
             <div class="entry-content">
                 <div class="row">
-                    <div class="columns small-12 medium-12 large-12"><?php
-                        if ( have_posts() ) :
-                            while ( have_posts() ) : the_post();
-                                if ( !empty( get_the_content() ) ) :
-                                    the_content();
-                                endif;
-                            endwhile;
-                        endif;
-                    ?><h2>Summary</h2></div>
+                    <div class="columns small-12 medium-12 large-12">
+                        <?php
+                            if ( !empty( get_the_content() ) ) :
+                                the_content();
+                            endif;
+                        ?><h2>Summary</h2>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="columns small-12 medium-12 large-9"><?php
 
                         $fields = get_fields();
-
-                        if( !empty( $fields['project_summary'] ) ){
+                        if( !empty( get_field('project_summary') ) ){
 
                             ?><div class="project-summary"><?php
 
-                                if( !empty( $fields['project_summary_2'] ) ){
+                                if( !empty( get_field('project_summary_2') ) ){
 
                                     ?><div class="project-summary-2"><?php
 
-                                        echo $fields['project_summary_2'];
+                                        echo get_field('project_summary_2');
 
                                     ?></div><?php
 
                                 }
 
-                                echo $fields['project_summary'];
+                                echo get_field('project_summary');
 
                             ?></div><?php
 
                         }
 
-                        if( !empty( $fields['project-research-1'] ) ){
+                        if( !empty( get_field('project-research-1') ) ){
 
                             ?><div class="aer-accordion"><?php
 
-                                echo $fields['project-research-1'];
+                                echo get_field('project-research-1');
 
                                 ?>
                                 <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
@@ -106,11 +81,11 @@ get_header(); ?>
 
                         }
 
-                        if( !empty( $fields['project-research-2'] ) ){
+                        if( !empty( get_field('project-research-2') ) ){
 
                             ?><div class="aer-accordion"><?php
 
-                                echo $fields['project-research-2'];
+                                echo get_field('project-research-2');
 
                                 ?>
                                 <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
@@ -118,11 +93,11 @@ get_header(); ?>
 
                         }
 
-                        if( !empty( $fields['project-research-3'] ) ){
+                        if( !empty( get_field('project-research-3') ) ){
 
                             ?><div class="aer-accordion"><?php
 
-                                echo $fields['project-research-3'];
+                                echo get_field('project-research-3');
 
                                 ?>
                                 <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
@@ -130,11 +105,11 @@ get_header(); ?>
 
                         }
 
-                        if( !empty( $fields['project-research-4'] ) ){
+                        if( !empty( get_field('project-research-4') ) ){
 
                             ?><div class="aer-accordion"><?php
 
-                                echo $fields['project-research-4'];
+                                echo get_field('project-research-4');
 
                                 ?>
                                 <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
@@ -147,7 +122,7 @@ get_header(); ?>
                     <div class="columns research-right small-12 medium-12 large-3">
                         <div class="row"><?php
 
-                            $project_leader = $fields['project_leader'];
+                            $project_leader = get_field('project_leader');
 
                             if( !empty( $project_leader ) && !empty( $project_leader['project_leader_name'] ) ){
 
@@ -187,11 +162,11 @@ get_header(); ?>
 
                             }
 
-                            if( !empty( $fields['team_members'] ) ){
+                            if( !empty( get_field('team_members') ) ){
 
                                 ?><div class="team-members columns small-12 medium-5 large-12"><h2>Team Members</h2><?php
 
-                                    echo $fields['team_members'];
+                                    echo get_field('team_members');
 
                                 ?></div><?php
 
@@ -201,11 +176,11 @@ get_header(); ?>
                     </div>
                     <div class="columns small-12 medium-12 large-9"><?php
 
-                        if( !empty( $fields['select_publications'] ) ){
+                        if( !empty( get_field('select_publications') ) ){
 
                             ?><div class="select-publications aer-accordion"><h2>Publications</h2><?php
 
-                                echo $fields['select_publications'];
+                                echo get_field('select_publications');
 
                                 ?>
                                 <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
@@ -219,4 +194,7 @@ get_header(); ?>
         </article>
     </div>
 </div>
-<?php get_footer(); ?>
+<?php
+    endwhile;
+endif;
+get_footer(); ?>

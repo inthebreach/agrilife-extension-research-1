@@ -71,12 +71,19 @@
                 {
                     "param": "post_type",
                     "operator": "==",
-                    "value": "page"
+                    "value": "page,research-project"
                 },
                 {
                     "param": "page_template",
                     "operator": "!=",
                     "value": "\/srv\/www\/wordpress-default\/wp-content\/plugins\/agrilife-extension-research\/view\/home.php"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "research-project"
                 }
             ]
         ],

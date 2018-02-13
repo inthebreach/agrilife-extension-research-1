@@ -36,7 +36,7 @@ add_action( 'init', function(){
   $project = new \AgriLife\ExtensionResearch\PostType(
   	'Research Project', array(), 'dashicons-portfolio',
   	array(
-  		'title', 'post-formats', 'editor', 'thumbnail',
+  		'title', 'post-formats', 'editor',
   		'genesis-seo', 'genesis-layouts', 'genesis-scripts'
   	)
   );
