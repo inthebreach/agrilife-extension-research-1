@@ -49,31 +49,31 @@ if ( have_posts() ) :
                     <div class="columns small-12 medium-12 large-9"><?php
 
                         $fields = get_fields();
-                        if( !empty( get_field('project_summary') ) ){
+                        if( !empty( get_field('aer_project_summary') ) ){
 
                             ?><div class="project-summary"><?php
 
-                                if( !empty( get_field('project_summary_2') ) ){
+                                if( !empty( get_field('aer_project_summary_2') ) ){
 
                                     ?><div class="project-summary-2"><?php
 
-                                        echo get_field('project_summary_2');
+                                        echo get_field('aer_project_summary_2');
 
                                     ?></div><?php
 
                                 }
 
-                                echo get_field('project_summary');
+                                echo get_field('aer_project_summary');
 
                             ?></div><?php
 
                         }
 
-                        if( !empty( get_field('project-research-1') ) ){
+                        if( !empty( get_field('aer_project_research_1') ) ){
 
                             ?><div class="aer-accordion"><?php
 
-                                echo get_field('project-research-1');
+                                echo get_field('aer_project_research_1');
 
                                 ?>
                                 <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
@@ -81,11 +81,11 @@ if ( have_posts() ) :
 
                         }
 
-                        if( !empty( get_field('project-research-2') ) ){
+                        if( !empty( get_field('aer_project_research_2') ) ){
 
                             ?><div class="aer-accordion"><?php
 
-                                echo get_field('project-research-2');
+                                echo get_field('aer_project_research_2');
 
                                 ?>
                                 <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
@@ -93,11 +93,11 @@ if ( have_posts() ) :
 
                         }
 
-                        if( !empty( get_field('project-research-3') ) ){
+                        if( !empty( get_field('aer_project_research_3') ) ){
 
                             ?><div class="aer-accordion"><?php
 
-                                echo get_field('project-research-3');
+                                echo get_field('aer_project_research_3');
 
                                 ?>
                                 <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
@@ -105,11 +105,11 @@ if ( have_posts() ) :
 
                         }
 
-                        if( !empty( get_field('project-research-4') ) ){
+                        if( !empty( get_field('aer_project_research_4') ) ){
 
                             ?><div class="aer-accordion"><?php
 
-                                echo get_field('project-research-4');
+                                echo get_field('aer_project_research_4');
 
                                 ?>
                                 <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
@@ -122,32 +122,32 @@ if ( have_posts() ) :
                     <div class="columns research-right small-12 medium-12 large-3">
                         <div class="row"><?php
 
-                            $project_leader = get_field('project_leader');
+                            $project_leader = get_field('aer_project_leader');
 
-                            if( !empty( $project_leader ) && !empty( $project_leader['project_leader_name'] ) ){
+                            if( !empty( $project_leader ) && !empty( $project_leader['aer_project_leader_name'] ) ){
 
                                 ?><div class="project-leader columns small-12 medium-7 large-12">
                                     <div class="project-leader-name"><h2><?php
-                                        echo $project_leader['project_leader_name'];
+                                        echo $project_leader['aer_project_leader_name'];
                                     ?></h2></div><?php
                                     ?><div class="project-leader-description"><?php
 
-                                        if( !empty( $project_leader['photo'] ) ){
+                                        if( !empty( $project_leader['aer_project_leader_photo'] ) ){
 
                                             ?><div class="photo small-only-text-right medium-only-text-right"><img<?php
 
-                                            if( !empty( $project_leader['photo']['title'] ) )
-                                                ?> title="<?php echo $project_leader['photo']['title'] ?>"<?php
+                                            if( !empty( $project_leader['aer_project_leader_photo']['title'] ) )
+                                                ?> title="<?php echo $project_leader['aer_project_leader_photo']['title'] ?>"<?php
 
-                                            if( !empty( $project_leader['photo']['alt'] ) )
-                                                ?> alt="<?php echo $project_leader['photo']['alt']; ?>"<?php
+                                            if( !empty( $project_leader['aer_project_leader_photo']['alt'] ) )
+                                                ?> alt="<?php echo $project_leader['aer_project_leader_photo']['alt']; ?>"<?php
 
-                                            ?> src="<?php echo $project_leader['photo']['sizes']['medium']; ?>"><?php
+                                            ?> src="<?php echo $project_leader['aer_project_leader_photo']['sizes']['medium']; ?>"><?php
 
-                                            if( !empty( $project_leader['image_highlight'] ) ){
+                                            if( !empty( $project_leader['aer_project_leader_photo_highlight'] ) ){
                                                 ?><div class="image-highlight"><?php
 
-                                                    echo $project_leader['image_highlight'];
+                                                    echo $project_leader['aer_project_leader_photo_highlight'];
 
                                                 ?></div><?php
                                             }
@@ -156,17 +156,17 @@ if ( have_posts() ) :
 
                                         }
 
-                                        echo $project_leader['project_leader_description'];
+                                        echo $project_leader['aer_project_leader_description'];
                                     ?></div>
                                 </div><?php
 
                             }
 
-                            if( !empty( get_field('team_members') ) ){
+                            if( !empty( get_field('aer_project_team_members') ) ){
 
                                 ?><div class="team-members columns small-12 medium-5 large-12"><h2>Team Members</h2><?php
 
-                                    echo get_field('team_members');
+                                    echo get_field('aer_project_team_members');
 
                                 ?></div><?php
 
@@ -176,11 +176,11 @@ if ( have_posts() ) :
                     </div>
                     <div class="columns small-12 medium-12 large-9"><?php
 
-                        if( !empty( get_field('select_publications') ) ){
+                        if( !empty( get_field('aer_project_select_publications') ) ){
 
                             ?><div class="select-publications aer-accordion"><h2>Publications</h2><?php
 
-                                echo get_field('select_publications');
+                                echo get_field('aer_project_select_publications');
 
                                 ?>
                                 <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
