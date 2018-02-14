@@ -167,6 +167,10 @@ class RequiredDOM {
 
             $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 
+            if( get_post_type() == 'research-project' && array_key_exists( 'banner-research-project', $image['sizes'] ) ){
+                $image['url'] = $image['sizes']['banner-research-project'];
+            }
+
             if( $protocol == 'https://' && strpos($image['url'], 'http://') == 0 ){
                 $image['url'] = str_replace( 'http://', 'https://', $image['url'] );
             }

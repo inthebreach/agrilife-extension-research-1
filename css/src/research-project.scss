@@ -7,11 +7,23 @@ $medium: 40.0625em;
 $large: 1140px;
 
 
-.single-research-project .title-area .research-project-featured-image {
-	min-height: 70px;
+.single-research-project {
+	.banner-fields {
+		height: 150px;
+		overflow: hidden;
 
-	img {
-		width: 100%;
+		.banner-caption {
+			z-index: 2;
+		}
+
+		img {
+			width: auto;
+			max-width: 9999px;
+			position: absolute;
+			z-index: 1;
+			left: 50%;
+			transform: translate(-50%);
+		}
 	}
 }
 

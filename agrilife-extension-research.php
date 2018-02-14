@@ -58,3 +58,17 @@ function fix_custom_posts_per_page( $query ) {
   }
 }
 add_action( 'pre_get_posts', 'fix_custom_posts_per_page' );
+
+// Add Image Sizes
+if ( function_exists( 'add_image_size' ) ) {
+    add_image_size( 'banner-research-project', 9999, 150, true );
+}
+
+function aer_image_sizes($sizes) {
+    $addsizes = array(
+        "banner-research-project" => __( "Research Project Banner")
+    );
+    $newsizes = array_merge($sizes, $addsizes);
+    return $newsizes;
+}
+add_filter('image_size_names_choose', 'aer_image_sizes');
