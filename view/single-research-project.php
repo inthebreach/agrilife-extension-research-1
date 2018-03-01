@@ -2,11 +2,11 @@
  /*Template Name: Research Project
  */
 
-// Queue styles
-add_action( 'wp_enqueue_scripts', 'aer_project_register_styles' );
-add_action( 'wp_enqueue_scripts', 'aer_project_enqueue_styles' );
+// Queue assets
+add_action( 'wp_enqueue_scripts', 'aer_project_register' );
+add_action( 'wp_enqueue_scripts', 'aer_project_enqueue' );
 
-function aer_project_register_styles(){
+function aer_project_register(){
 
     wp_register_style(
         'extension-research-project-styles',
@@ -16,17 +16,26 @@ function aer_project_register_styles(){
         'screen'
     );
 
+    wp_register_script( 'extension-research-project-scripts',
+        AG_EXTRES_DIR_URL . 'js/research-project.js',
+        false,
+        true,
+        true
+    );
+
 }
 
-function aer_project_enqueue_styles(){
+function aer_project_enqueue(){
 
     wp_enqueue_style( 'extension-research-project-styles' );
+    wp_enqueue_script( 'extension-research-project-scripts' );
 
 }
 
 get_header();
 if ( have_posts() ) :
-    while ( have_posts() ) : the_post(); ?>
+    while ( have_posts() ) : the_post();
+?>
 <div id="primary">
     <div id="content" role="main">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -76,7 +85,6 @@ if ( have_posts() ) :
                                 echo get_field('aer_project_research_1');
 
                                 ?>
-                                <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
                             </div><?php
 
                         }
@@ -88,7 +96,6 @@ if ( have_posts() ) :
                                 echo get_field('aer_project_research_2');
 
                                 ?>
-                                <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
                             </div><?php
 
                         }
@@ -100,7 +107,6 @@ if ( have_posts() ) :
                                 echo get_field('aer_project_research_3');
 
                                 ?>
-                                <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
                             </div><?php
 
                         }
@@ -112,7 +118,6 @@ if ( have_posts() ) :
                                 echo get_field('aer_project_research_4');
 
                                 ?>
-                                <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
                             </div><?php
 
                         }
@@ -183,7 +188,6 @@ if ( have_posts() ) :
                                 echo get_field('aer_project_select_publications');
 
                                 ?>
-                                <div class="aer-accordion-button"><a href="javascript:;" onclick="this.parentNode.parentNode.classList.toggle('aer-accordion-open');">Expand</a></div>
                             </div><?php
 
                         }
