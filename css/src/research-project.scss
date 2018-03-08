@@ -6,27 +6,6 @@
 $medium: 40.0625em;
 $large: 1140px;
 
-
-.single-research-project {
-	.banner-fields {
-		height: 210px;
-		overflow: hidden;
-
-		.banner-caption {
-			z-index: 2;
-		}
-
-		img {
-			width: auto;
-			max-width: 9999px;
-			position: absolute;
-			z-index: 1;
-			left: 50%;
-			transform: translate(-50%);
-		}
-	}
-}
-
 .research-project {
 
 	h2 {
