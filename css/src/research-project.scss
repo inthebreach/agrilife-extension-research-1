@@ -9,7 +9,7 @@ $large: 1140px;
 
 .single-research-project {
 	.banner-fields {
-		height: auto;
+		height: 210px;
 		overflow: hidden;
 
 		.banner-caption {
@@ -19,7 +19,7 @@ $large: 1140px;
 		img {
 			width: auto;
 			max-width: 9999px;
-			position: relative;
+			position: absolute;
 			z-index: 1;
 			left: 50%;
 			transform: translate(-50%);
