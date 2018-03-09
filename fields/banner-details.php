@@ -74,12 +74,12 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'post',
+				'value' => 'page',
 			),
 			array(
 				'param' => 'page_template',
 				'operator' => '!=',
-				'value' => 'default',
+				'value' => AG_EXTRES_TEMPLATE_PATH . '/home.php',
 			),
 		),
 		array(
