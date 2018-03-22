@@ -43,6 +43,12 @@ add_action( 'init', function(){
 
   $project_templates = new \AgriLife\ExtensionResearch\Templates( 'research-project', 'single-research-project.php', 'archive-research-project.php' );
 
+  // Replace the AgriLife People plugin's shortcode
+  $alp_shortcode = new \AgriLife\ExtensionResearch\Shortcode();
+
+  // Remove unneeded ACF fields from AgriLife People custom post type
+  $alp_field_mods = new \AgriLife\ExtensionResearch\ALPFieldRemoval();
+
 });
 
 add_action( 'agrilife_core_init', function() {
