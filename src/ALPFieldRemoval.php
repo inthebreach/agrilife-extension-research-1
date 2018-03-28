@@ -16,7 +16,6 @@ class ALPFieldRemoval {
 		add_filter('acf/load_field/key=field_52540bf641c3e', array( $this, 'remove_field' ) );
 		add_filter('acf/load_field/key=field_52541865a0bba', array( $this, 'remove_field' ) );
 		add_filter('acf/load_field/key=field_5254180ea0bb8', array( $this, 'remove_field' ) );
-		add_filter('acf/load_field/key=field_525416b3f2379', array( $this, 'remove_field' ) );
 
 	}
 
