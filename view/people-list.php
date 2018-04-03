@@ -29,6 +29,21 @@ if ( $people->have_posts() ) : ?>
 			$phone = '<p class="people-phone tel">' . get_field( 'ag-people-phone' ) . '</p>';
 		}
 
+    // Collect job titles
+    $job_titles = array();
+    if( get_field( 'ag-people-title' ) ){
+        $job_titles[] = get_field( 'ag-people-title' );
+    }
+    if( get_the_terms(get_the_ID(), 'agency') ){
+	    foreach ( get_the_terms(get_the_ID(), 'agency') as $agency => $atts ) {
+	        if( $atts->slug = 'extension' ){
+	            $job_titles[] = 'Texas A&M AgriLife Extension';
+	        } else if( $atts->slug = 'research' ){
+	            $job_titles[] = 'Texas A&M AgriLife Research';
+	        }
+	    }
+	  }
+
 		?><li class="people-listing-item column small-12 medium-6 large-6">
 			<div class="role people-container">
 				<div class="people-image"><?php echo $linkopen; ?><img src="<?php echo $image_src; ?>" alt="<?php echo $image_alt; ?>" title="<?php echo $image_alt; ?>" width="70" height="70" /><?php echo $linkclose; ?></div>
@@ -42,7 +57,7 @@ if ( $people->have_posts() ) : ?>
 							}
 							echo $linkclose;
 						?></h3>
-					<h4 class="people-title"><?php the_field( 'ag-people-title' ); ?></h4>
+					<h4 class="people-title"><?php echo implode( '<br>', $job_titles ); ?></h4>
 				</div>
 				<div class="people-contact-details"><?php
 						echo $email;

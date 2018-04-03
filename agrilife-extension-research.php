@@ -46,8 +46,11 @@ add_action( 'init', function(){
   // Replace the AgriLife People plugin's shortcode
   $alp_shortcode = new \AgriLife\ExtensionResearch\Shortcode();
 
-  // Remove unneeded ACF fields from AgriLife People custom post type
-  $alp_field_mods = new \AgriLife\ExtensionResearch\ALPFieldRemoval();
+  // Modify ACF fields from AgriLife People custom post type
+  $alp_field_mods = new \AgriLife\ExtensionResearch\ALPFieldChanges();
+
+  // Custom output for AgriLife People posts
+  $alp_post_templates = new \AgriLife\ExtensionResearch\ALPViews();
 
 });
 
