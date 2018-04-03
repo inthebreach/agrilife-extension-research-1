@@ -38,8 +38,8 @@ if ( $people->have_posts() ) : ?>
 	    foreach ( get_the_terms(get_the_ID(), 'agency') as $agency => $atts ) {
 	        if( $atts->slug == 'extension' ){
 	            $job_titles[] = 'Texas A&M AgriLife Extension';
-	        } else if( $atts->slug = 'research' ){
-	            $job_titles[] == 'Texas A&M AgriLife Research';
+	        } else if( $atts->slug == 'research' ){
+	            $job_titles[] = 'Texas A&M AgriLife Research';
 	        }
 	    }
 	  }
