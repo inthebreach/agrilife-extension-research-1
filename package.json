@@ -1,6 +1,6 @@
 {
   "name": "agrilife-extension-research",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Functionality for AgriLife Extension Research sites",
   "main": "agrilife-extension-research.php",
   "repository": "https://github.com/agrilife/agrilife-extension-research",

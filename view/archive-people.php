@@ -6,10 +6,11 @@
 
 get_header(); ?>
 
-<div id="wrap">
-	<div id="content" role="main">
+<div class="<?php echo genesis_site_layout(); ?>-wrap">
+	<div class="content" id="content" role="main">
 		<h1 class="entry-title">People</h1>
 		<?php
+
 		ALP_Templates::search_form();
 
 		$people = ALP_Query::get_people();
@@ -22,12 +23,13 @@ get_header(); ?>
 		echo $output;
 
 		?>
+	</div><!-- #content --><?php
 
-	</div><!-- #content -->
+	get_sidebar();
 
-</div><!-- #wrap -->
+	?>
+</div><!-- #wrap --><?php
 
-<?php get_sidebar(); ?>
+get_footer();
 
-<?php get_footer(); ?>
-
+?>

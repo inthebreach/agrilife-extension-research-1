@@ -10,8 +10,9 @@ Functionality for AgriLife Extension Research sites
 
 1. [AgriFlex3 theme](https://github.com/agrilife/agriflex3)
 2. [AgriLife Core plugin](https://github.com/agrilife/agrilife-core)
-3. Advanced Custom Fields 5+ plugin (for Landing Page 1 Template)
-4. Soliloquy Slider plugin (for Landing Page 1 Template)
+3. Advanced Custom Fields: Image Crop Add-on
+4. Advanced Custom Fields 5+ plugin
+5. Soliloquy Slider plugin (for Landing Page 1 Template)
 
 ## Installation
 
