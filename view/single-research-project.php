@@ -122,6 +122,28 @@ if ( have_posts() ) :
 
                         }
 
+                        if( !empty( get_field('aer_project_research_5') ) ){
+
+                            ?><div class="aer-accordion"><?php
+
+                                echo get_field('aer_project_research_5');
+
+                                ?>
+                            </div><?php
+
+                        }
+
+                        if( !empty( get_field('aer_project_research_6') ) ){
+
+                            ?><div class="aer-accordion"><?php
+
+                                echo get_field('aer_project_research_6');
+
+                                ?>
+                            </div><?php
+
+                        }
+
                         ?>
                     </div>
                     <div class="columns research-right small-12 medium-12 large-3">
