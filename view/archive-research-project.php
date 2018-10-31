@@ -61,10 +61,11 @@ get_header(); ?>
 		</div>
 
 	</main><!-- #content -->
-
+	<?php
+		if( 'content-sidebar' === genesis_site_layout() ){
+			get_sidebar();
+		}
+	?>
 </div><!-- #wrap -->
 
-<?php get_sidebar(); ?>
-
 <?php get_footer(); ?>
-
