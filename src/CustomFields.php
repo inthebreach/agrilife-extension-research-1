@@ -66,7 +66,11 @@ class CustomFields {
                     if( $subvalue['key'] != 'field_59108cfb935ff' ){
 
                         // This field should have conditional logic
-                        $field['layouts'][$key]['sub_fields'][$subkey]['conditional_logic'] = $conditional_logic;
+                        if( empty( $field['layouts'][$key]['sub_fields'][$subkey]['conditional_logic'] ) ){
+                            $field['layouts'][$key]['sub_fields'][$subkey]['conditional_logic'] = $conditional_logic;
+                        } else {
+                            $field['layouts'][$key]['sub_fields'][$subkey]['conditional_logic'][0][] = $conditional_logic[0][0];
+                        }
 
                     }
 
