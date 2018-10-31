@@ -32,17 +32,16 @@ get_header(); ?>
 
 		if( have_posts() ) :
 			while( have_posts() ) : the_post();
-				?>
-				<header class="entry-header">
-					<h1>
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					</h1>
-				</header>
+				genesis_entry_header_markup_open();
+				genesis_do_post_title();
+				genesis_entry_header_markup_close(); ?>
 				<div class="entry-content"><?php
 
-					if( !empty( get_field('project_summary') ) ){
+					$summary = empty( get_field('aer_project_summary') ) ? get_the_content() : get_field('aer_project_summary');
 
-						$summary = wp_strip_all_tags( get_the_content() );
+					if( !empty( $summary ) ){
+
+						$summary = wp_strip_all_tags( $summary );
 						$summary = wp_trim_words( $summary, 55, '...' );
 						echo '<p>' . $summary . '</p>';
 
