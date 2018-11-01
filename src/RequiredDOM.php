@@ -160,10 +160,9 @@ class RequiredDOM {
         $img = '';
         $linkopen = $linkclose = '';
         $capopen = $capclose = '';
+        $image = get_field( 'bannerimage' );
 
-        if( get_field('bannerimage') ){
-
-            $image = get_field( 'bannerimage' );
+        if( is_array( $image ) ){
 
             $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 
