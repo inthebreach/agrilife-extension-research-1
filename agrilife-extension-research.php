@@ -60,6 +60,15 @@ add_action( 'agrilife_core_init', function() {
   $extres_home_template->register();
 });
 
+/**
+ * Add Genesis Title Toggle to research-project CPT
+ */
+function be_title_toggle_on_posts( $post_types ) {
+  $post_types[] = 'research-project';
+  return $post_types;
+}
+add_filter( 'be_title_toggle_post_types', 'be_title_toggle_on_posts' );
+
 function fix_custom_posts_per_page( $query ) {
   if ( !is_admin() && $query->query['post_type'] == 'research-project' && is_post_type_archive('research-project') ) {
     $query->set( 'posts_per_page', '10' );
