@@ -44,4 +44,4 @@ cache
 # Ignore dependencies using package control
 node_modules/*
 
-agrilife-extension-research.zip
+*.zip

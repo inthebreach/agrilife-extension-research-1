@@ -1,19 +1,19 @@
 {
   "name": "agrilife-extension-research",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "Functionality for AgriLife Extension Research sites",
   "main": "agrilife-extension-research.php",
   "repository": "https://github.com/agrilife/agrilife-extension-research",
   "author": "Travis Ward",
   "license": "GPL-2.0+",
   "readmeFilename": "README.md",
-  "scripts": {},
+  "scripts": {
+    "start": "composer install && npm install && grunt"
+  },
   "dependencies": {
-    "curlrequest": "^0.3.10",
     "grunt": "~0.4.5",
     "grunt-contrib-compass": "^1.1.1",
     "grunt-contrib-compress": "^1.4.3",
-    "grunt-gh-release": "0.0.2",
     "underscore": "^1.8.3"
   },
   "engines": {
