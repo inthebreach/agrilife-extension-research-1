@@ -294,6 +294,25 @@ acf_add_local_field_group(array(
 			'media_upload' => 0,
 			'delay' => 0,
 		),
+		array(
+			'key' => 'field_5ef248dea8891',
+			'label' => 'Grants',
+			'name' => 'aer_project_grants',
+			'type' => 'wysiwyg',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '<ul><li>Grant #1</li></ul>',
+			'tabs' => 'visual',
+			'toolbar' => 'simple_text',
+			'media_upload' => 0,
+			'delay' => 0,
+		),
 	),
 	'location' => array(
 		array(
