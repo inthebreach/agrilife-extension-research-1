@@ -214,20 +214,19 @@ if ( have_posts() ) :
 
                         }
 
+                    ?></div><?php
+
+                        if( !empty( get_field('aer_project_grants') ) ){
+
+                            ?><div class="columns small-12 medium-12 large-9"><div class="grants aer-accordion"><h2>Grants</h2><?php
+
+                                echo get_field('aer_project_grants');
+
+                            ?></div></div><?php
+
+                        }
+
                     ?></div>
-                </div><?php
-
-                    if( !empty( get_field('aer_project_grants') ) ){
-
-                        ?><div class="row"><div class="columns small-12 medium-12 large-12"><div class="grants aer-accordion"><h2>Grants</h2><?php
-
-                            echo get_field('aer_project_grants');
-
-                        ?></div></div></div><?php
-
-                    }
-
-                ?>
             </div>
         </article>
     </div>
