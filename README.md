@@ -29,10 +29,10 @@ Functionality for AgriLife Extension Research sites
     * Home: Full-width and custom styled Soliloquy slider, programs, and a sidebar
 * Page Layouts:
 
-![Content Sidebar](http://agrilife.org/wp-content/themes/genesis/lib/admin/images/layouts/cs.gif)
-![Sidebar Content](http://agrilife.org/wp-content/themes/genesis/lib/admin/images/layouts/sc.gif)
-![Sidebar Content Sidebar](http://agrilife.org/wp-content/themes/genesis/lib/admin/images/layouts/scs.gif)
-![Content](http://agrilife.org/wp-content/themes/genesis/lib/admin/images/layouts/c.gif)
+![Content Sidebar](https://agrilife.tamu.edu/wp-content/themes/genesis/lib/admin/images/layouts/cs.gif)
+![Sidebar Content](https://agrilife.tamu.edu/wp-content/themes/genesis/lib/admin/images/layouts/sc.gif)
+![Sidebar Content Sidebar](https://agrilife.tamu.edu/wp-content/themes/genesis/lib/admin/images/layouts/scs.gif)
+![Content](https://agrilife.tamu.edu/wp-content/themes/genesis/lib/admin/images/layouts/c.gif)
 
 ## Development Installation
 
