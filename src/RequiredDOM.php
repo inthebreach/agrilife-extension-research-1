@@ -52,7 +52,7 @@ class RequiredDOM {
             get_bloginfo( 'name' ) );
 
         // Add other logos
-        $content = sprintf( '<a href="%s" class="%s-logo" title="%s"><span>%s</span></a>', 'http://agriliferesearch.tamu.edu/', 'research-extension', 'Research and Extension', 'Research and Extension' );
+        $content = sprintf( '<a href="%s" class="%s-logo" title="%s"><span>%s</span></a>', esc_attr( get_bloginfo('url') , 'research-extension', 'Research and Extension', 'Research and Extension' );
 
         // Combine logos
         $title = sprintf( '<%s class="site-title" itemprop="headline">%s</%s>',
