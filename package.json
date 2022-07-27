@@ -21,7 +21,11 @@
     "underscore": "^1.12.1"
   },
   "engines": {
-    "node": "^4.0.0"
+    "node": "^6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgriLife/agrilife-extension-research.git"
   },
   "devDependencies": {
     "grunt-contrib-watch": "^1.0.0",
