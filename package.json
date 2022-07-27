@@ -8,7 +8,7 @@
   "license": "GPL-2.0+",
   "readmeFilename": "README.md",
   "scripts": {
-    "start": "composer install && npm install && grunt"
+    "start": "composer install -g && npm install -g npm@latest && -g grunt@latest"
   },
   "dependencies": {
     "grunt": "~1.5.3",
