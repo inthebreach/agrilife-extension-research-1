@@ -17,7 +17,7 @@
     "underscore": "^1.12.1"
   },
   "engines": {
-    "node": "4.0.0"
+    "node": "^4.0.0"
   },
   "devDependencies": {
     "grunt-contrib-watch": "^1.0.0",
